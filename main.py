@@ -10,11 +10,13 @@ def main():
                "T": "",
                "lang": "ru"}
     locations = ('svo', 'Череповец', 'Лондон')
+
     for location in locations:
         url = url_template.format(location)
         response = requests.get(url, params=payload)
         response.raise_for_status()
         print(response.text)
-        print(url)
+
+
 if __name__ == '__main__':
     main()
